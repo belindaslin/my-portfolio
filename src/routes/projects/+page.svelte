@@ -2,7 +2,14 @@
   <title>Projects</title>
 </svelte:head>
 
-<h1>Projects</h1>
+
+<script>
+  import projects from "$lib/projects.json";
+  import Project from "$lib/Project.svelte";
+</script>
+
+<h1>{projects.length} Projects </h1>
+<!-- <pre>{ JSON.stringify(projects, null, "\t") }</pre> -->
     <!-- <nav>
       <a href="../index.html">Home</a>
 
@@ -14,22 +21,10 @@
     <form>
       <section class="projects">
         <div class="projects">
-          <article>
-            <h2>A2</h2>
-            <a href="a2.html">
-              <img
-                src="https://vis-society.github.io/labs/2/images/empty.svg"
-                alt="Project1"
-              />
-            </a>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-              omnis doloremque eaque distinctio iusto vel id tenetur eum, a esse
-              error beatae quo adipisci nulla aperiam ratione, tempore culpa
-              maiores.
-            </p>
-          </article>
+          {#each projects as p}
+          <Project data={p} />
+          {/each}
+          <!-- {#each projects as p}
           <article>
             <h2>A3</h2>
             <a href="a3.html">
@@ -45,6 +40,8 @@
               aliquid excepturi modi unde nam odit distinctio?
             </p>
           </article>
+          {/each}
+          {#each projects as p}
           <article>
             <h2>Obcaecati minima omnis nemo?</h2>
             <img
@@ -58,6 +55,8 @@
               cupiditate deleniti?
             </p>
           </article>
+          {/each}
+          {#each projects as p}
           <article>
             <h2>Dolorem fugiat dicta consequuntur?</h2>
             <img
@@ -71,6 +70,8 @@
               nobis quo!
             </p>
           </article>
+          {/each}
+          {#each projects as p}
           <article>
             <h2>Sequi fuga molestiae tempore.</h2>
             <img
@@ -84,6 +85,8 @@
               repellendus dignissimos, deserunt libero!
             </p>
           </article>
+          {/each}
+          {#each projects as p}
           <article>
             <h2>Perspiciatis exercitationem non facilis.</h2>
             <img
@@ -97,6 +100,8 @@
               iure minus, vel commodi ab?
             </p>
           </article>
+          {/each}
+          {#each projects as p}
           <article>
             <h2>Fuga quos sint quae.</h2>
             <img
@@ -110,6 +115,8 @@
               nobis hic nihil vel fugit quia!
             </p>
           </article>
+          {/each}
+          {#each projects as p}
           <article>
             <h2>Quaerat vero necessitatibus tempore!</h2>
             <img
@@ -123,6 +130,8 @@
               minus mollitia necessitatibus nemo?
             </p>
           </article>
+          {/each}
+          {#each projects as p}
           <article>
             <h2>A voluptate exercitationem repellat!</h2>
             <img
@@ -136,6 +145,8 @@
               iste fugit omnis!
             </p>
           </article>
+          {/each}
+          {#each projects as p}
           <article>
             <h2>Et in velit sit!</h2>
             <img
@@ -149,6 +160,8 @@
               cumque tempora assumenda obcaecati distinctio id odit!
             </p>
           </article>
+          {/each}
+          {#each projects as p}
           <article>
             <h2>At, architecto! Sed, explicabo.</h2>
             <img
@@ -162,6 +175,8 @@
               officiis blanditiis doloribus nesciunt perferendis!
             </p>
           </article>
+          {/each}
+          {#each projects as p}
           <article>
             <h2>Maxime exercitationem neque voluptate!</h2>
             <img
@@ -175,6 +190,8 @@
               praesentium, fugiat commodi deserunt, dicta placeat.
             </p>
           </article>
+          {/each}
+         -->
         </div>
       </section>
     </form>

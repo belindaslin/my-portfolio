@@ -1,3 +1,11 @@
+<script>
+  import projects from "$lib/projects.json";
+  import Project from "$lib/Project.svelte";
+</script>
+<!-- {#each projects.slice(0, 3) as p}
+<Project data={p} />
+{/each} -->
+
 <!-- <h1>Welcome to SvelteKit</h1>
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 <body> -->
@@ -27,3 +35,13 @@
         -->
 
     <!-- <nav> (Navigation) is used to create a menu with links to other pages or external sites. -->
+      
+    
+      <section>
+          <h2>Latest Projects</h2>
+          <div class="projects highlights">
+              {#each projects.slice(0, 3) as p}
+                  <Project data={p} hLevel={3} />
+              {/each}
+          </div>
+      </section>
