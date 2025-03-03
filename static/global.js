@@ -36,7 +36,7 @@ let nav = document.createElement("nav");
 document.body.prepend(nav);
 
 // TODO: Inside index.html (our home page), add a class="home" attribute to the <html lang="en"> element!
-const ARE_WE_HOME = document.documentElement.classList.contains("home");
+// const ARE_WE_HOME = document.documentElement.classList.contains("home");
 
 // for (let p of pages) {
 //   let url = p.url;
@@ -58,9 +58,9 @@ for (let p of pages) {
   let title = p.title;
 
   // Create correct relative link and add it to nav
-  if (!ARE_WE_HOME && !url.startsWith("http")) {
-    url = "../" + url;
-  }
+  // if (!ARE_WE_HOME && !url.startsWith("http")) {
+  //   url = "../" + url;
+  // }
 
   let a = document.createElement("a");
   a.href = url;
