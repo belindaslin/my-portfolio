@@ -22,15 +22,15 @@ function $$(selector, context = document) {
 // TODO: Comment out the step 2 code in this file!
 
 // step 3.1
-let pages = [
-  { url: "./", title: "Home" },
-  { url: "projects", title: "Projects" },
-  { url: "resume", title: "Resume" },
-  { url: "contact", title: "Contact" },
-  { url: "https://github.com/belindaslin", title: "Github" },
+// let pages = [
+//   { url: "./", title: "Home" },
+//   { url: "projects", title: "Projects" },
+//   { url: "resume", title: "Resume" },
+//   { url: "contact", title: "Contact" },
+//   { url: "https://github.com/belindaslin", title: "Github" },
 
-  // TODO: add the rest of your pages here
-];
+//   // TODO: add the rest of your pages here
+// ];
 
 let nav = document.createElement("nav");
 document.body.prepend(nav);
@@ -84,18 +84,18 @@ for (let p of pages) {
 
 // step 4.2
 
-document.body.insertAdjacentHTML(
-  "afterbegin",
-  `
-	<label class="color-scheme">
-		Theme:
-		<select id="color-scheme">
-			<option value="light dark">Auto</option>
-			<option value="light">Light</option>
-			<option value="dark">Dark</option>
-		</select>
-	</label>`
-);
+// document.body.insertAdjacentHTML(
+//   "afterbegin",
+//   `
+// 	<label class="color-scheme">
+// 		Theme:
+// 		<select id="color-scheme">
+// 			<option value="light dark">Auto</option>
+// 			<option value="light">Light</option>
+// 			<option value="dark">Dark</option>
+// 		</select>
+// 	</label>`
+// );
 
 // step 4.3
 // TODO: Inside your styles.css file, add styling to move the switcher with class .color-scheme to the top right corner. There is nothing to do in this file in this step
@@ -107,10 +107,10 @@ select.addEventListener("input", function (event) {
   console.log("color scheme changed to", event.target.value);
 
   // TODO: use document.documentElement.style.setProperty to set the color scheme here! (hint: take a look at the handout)
-  document.documentElement.style.setProperty(
-    "color-scheme",
-    event.target.value
-  );
+  // document.documentElement.style.setProperty(
+  //   "color-scheme",
+  //   event.target.value
+  // );
 
   // TODO: (step 4.5.1) uncomment the line below!
   localStorage.colorScheme = event.target.value;

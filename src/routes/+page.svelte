@@ -1,7 +1,11 @@
 <script>
   import projects from "$lib/projects.json";
   import Project from "$lib/Project.svelte";
+  let profileData = fetch("https://api.github.com/users/your-username");
 </script>
+ 
+
+
 <!-- {#each projects.slice(0, 3) as p}
 <Project data={p} />
 {/each} -->
@@ -36,7 +40,40 @@
 
     <!-- <nav> (Navigation) is used to create a menu with links to other pages or external sites. -->
       
-    
+    <!-- {#await fetch("https://api.github.com/users/belindaslin") }
+    <p>Loading...</p>
+    {:then response} {#await response.json()}
+    <p>Decoding...</p>
+    {:then data}
+    <p>The data is { JSON.stringify(data) }</p>
+    {:catch error}
+    <p class="error">Something went wrong: {error.message}</p>
+    {/await} {:catch error}
+    <p class="error">Something went wrong: {error.message}</p>
+    {/await} -->
+    {#await fetch("https://api.github.com/users/belindaslin")}
+<p>Loading...</p>
+{:then response}
+{#await response.json()}
+  <p>Decoding...</p>
+{:then data}
+  <section>
+    <h2>My GitHub Stats</h2>
+    <dl>
+      <dt>Followers:</dt>
+      <dd>{data.followers}</dd>
+      <dt>Following:</dt>
+      <dd>{data.following}</dd>
+      <dt>Public Repositories:</dt>
+      <dd>{data.public_repos}</dd>
+    </dl>
+  </section>
+{:catch error}
+  <p class="error">Something went wrong: {error.message}</p>
+{/await}
+{:catch error}
+<p class="error">Something went wrong: {error.message}</p>
+{/await}
       <section>
           <h2>Latest Projects</h2>
           <div class="projects highlights">
@@ -45,3 +82,4 @@
               {/each}
           </div>
       </section>
+  
