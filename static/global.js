@@ -32,8 +32,8 @@ function $$(selector, context = document) {
 //   // TODO: add the rest of your pages here
 // ];
 
-let nav = document.createElement("nav");
-document.body.prepend(nav);
+// let nav = document.createElement("nav");
+// document.body.prepend(nav);
 
 // TODO: Inside index.html (our home page), add a class="home" attribute to the <html lang="en"> element!
 // const ARE_WE_HOME = document.documentElement.classList.contains("home");
@@ -53,30 +53,30 @@ document.body.prepend(nav);
 // step 3.2
 // TODO: Comment out the `for (let p of pages) {...}` loop you made in step 3.1 and uncomment the for loop below! I have helped you restructure the loop a bit in a way that may be confusing from the lab instructions
 
-for (let p of pages) {
-  let url = p.url;
-  let title = p.title;
+// for (let p of pages) {
+//   let url = p.url;
+//   let title = p.title;
 
-  // Create correct relative link and add it to nav
-  // if (!ARE_WE_HOME && !url.startsWith("http")) {
-  //   url = "../" + url;
-  // }
+//   // Create correct relative link and add it to nav
+//   // if (!ARE_WE_HOME && !url.startsWith("http")) {
+//   //   url = "../" + url;
+//   // }
 
-  let a = document.createElement("a");
-  a.href = url;
-  a.textContent = title;
-  // nav.append(a);
+//   let a = document.createElement("a");
+//   a.href = url;
+//   a.textContent = title;
+//   // nav.append(a);
 
-  if (a.host === location.host && a.pathname === location.pathname) {
-    a.classList.add("current");
-  }
+//   if (a.host === location.host && a.pathname === location.pathname) {
+//     a.classList.add("current");
+//   }
 
-  if (a.host !== location.host) {
-    a.target = "_blank";
-  }
+//   if (a.host !== location.host) {
+//     a.target = "_blank";
+//   }
 
-  nav.append(a);
-}
+//   nav.append(a);
+// }
 
 // STEP 4
 // step 4.1
